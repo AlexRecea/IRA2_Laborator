@@ -41,7 +41,6 @@ e[0]=in();
 double b0 = 1.0046;
 double b1 = -0.9961;
 c[0] = c[1] + b0*e[0] + b1*e[1];
-c[0]= 1; 
 out(c[0]); 
 for(int i=2;i>0;i--) 
 { 
