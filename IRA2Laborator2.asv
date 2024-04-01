@@ -1,0 +1,14 @@
+Hf = tf (2, conv ([1 1], [10 1]), 'iodelay', 1);
+bode(Hf)
+phase = -180 + 60 + 15
+wt_prim = 0.296;
+
+Ti = 4/wt_prim;
+Kp = 1 / abs(evalfr(Hf,i*wt_prim));
+
+HrPI = tf ([Kp*Ti 1], [Ti 0]);
+
+H0 = feedback (HrPI*Hf, 1);
+step(H0)
+
+%%
